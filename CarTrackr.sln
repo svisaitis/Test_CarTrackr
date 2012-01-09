@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTrackr", "CarTrackr\CarTrackr.csproj", "{E536FB25-134E-4819-9BAC-0D276D851FB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTrackr.Tests", "CarTrackr.Tests\CarTrackr.Tests.csproj", "{88FEF4C1-C128-4B3F-B335-C491ADEE2E66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{2740F88A-B0D0-4338-B8F5-B0622056952B}"
+	ProjectSection(SolutionItems) = preProject
+		References\DotNetOpenId.dll = References\DotNetOpenId.dll
+		References\Microsoft.Practices.ObjectBuilder2.dll = References\Microsoft.Practices.ObjectBuilder2.dll
+		References\Microsoft.Practices.Unity.dll = References\Microsoft.Practices.Unity.dll
+		References\Microsoft.Web.Mvc.dll = References\Microsoft.Web.Mvc.dll
+		References\Moq.dll = References\Moq.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E536FB25-134E-4819-9BAC-0D276D851FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E536FB25-134E-4819-9BAC-0D276D851FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E536FB25-134E-4819-9BAC-0D276D851FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E536FB25-134E-4819-9BAC-0D276D851FB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88FEF4C1-C128-4B3F-B335-C491ADEE2E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88FEF4C1-C128-4B3F-B335-C491ADEE2E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88FEF4C1-C128-4B3F-B335-C491ADEE2E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88FEF4C1-C128-4B3F-B335-C491ADEE2E66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

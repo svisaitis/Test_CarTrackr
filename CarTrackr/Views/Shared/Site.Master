@@ -1,0 +1,70 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title><%= Html.Encode(ViewData["Title"]) %></title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Content/MicrosoftAjax.js"></script>
+    <script type="text/javascript" src="/Content/MicrosoftMvcAjax.js"></script>
+</head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <a href="~/" runat="server"><asp:Image ID="logo" runat="server" ImageUrl="~/Content/Images/CarTrackr.png" /></a>
+            </div>
+              
+             <div id="logindisplay">
+                    <%
+                        if (Request.IsAuthenticated) {
+                    %>
+                            Welcome <b><%= Html.Encode(!Page.User.Identity.Name.StartsWith("http") ? Page.User.Identity.Name : "")%></b>!
+                            [ <%=Html.ActionLink("Logout", "Logout", "Account") %> ]
+                    <%
+                        }
+                        else {
+                    %> 
+                            [ <%=Html.ActionLink("Login", "Login", "Account") %> ]
+                    <%
+                        }
+                    %>
+            </div> 
+            
+            <div id="menucontainer">
+            
+                <ul id="menu">              
+                    <li><%= Html.ActionLink("Home", "Index", "Home")%></li>
+                    <% if (Request.IsAuthenticated) { %>
+                        <li><%= Html.ActionLink("Cars", "List", "Car")%></li>
+                        <li><%= Html.ActionLink("My Account", "Index", "Account")%></li>
+                    <% } %>
+                    <li><%= Html.ActionLink("About Us", "About", "Home")%></li>
+                </ul>
+            
+            </div>
+        </div>
+
+        <div id="main">
+            <div id="breadcrumbs>
+                <asp:SiteMapPath ID="breadCrumbTrail" runat="server">
+                    <NodeStyle ForeColor="#0063DC" Font-Bold="true" Font-Size="1.4em" />
+                    <CurrentNodeStyle ForeColor="#FF0084" />
+                    <PathSeparatorStyle ForeColor="#000000" Font-Bold="true" />
+                    <PathSeparatorTemplate> / </PathSeparatorTemplate>
+                    <RootNodeTemplate><a href="~/" runat="server">Home</a></RootNodeTemplate>
+                </asp:SiteMapPath>
+            </div>
+        
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+                CarTrackr &copy; Copyright 2008 - <%=DateTime.Now.Year.ToString()%> <a href="htpt://blog.maartenballiauw.be">Maarten Balliauw</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Repository implementations">
+    <Position X="0.5" Y="3.719" Height="0.542" Width="1.7" />
+  </Comment>
+  <Class Name="CarTrackr.Tests.Repository.CarRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAcBAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAABAAI=</HashCode>
+      <FileName>Repository\CarRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CarTrackr.Tests.Repository.UserRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CarTrackr.Tests.Repository.CostsRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAAAAAAAAAAAAEAQAAAAAAAAAAAAAIAAAAAIQ=</HashCode>
+      <FileName>Repository\CostsRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CarTrackr.Tests.Repository.RefuellingRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAABQAAAAAAAAAACAAAAAAAAAI=</HashCode>
+      <FileName>Repository\RefuellingRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

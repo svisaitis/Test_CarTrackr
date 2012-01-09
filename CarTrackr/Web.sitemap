@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+  <siteMapNode id="Root" url="~/Home/Index">
+    <mvcSiteMapNode id="About" title="About Us" controller="Home" action="About" />
+
+    <mvcSiteMapNode id="Cars" title="Cars" controller="Car" action="Index">
+      <mvcSiteMapNode id="DetailsCar" title="Details" controller="Car" action="Details" />
+      <mvcSiteMapNode id="EditCar" title="Edit" controller="Car" action="Edit" />
+      <mvcSiteMapNode id="NewCar" title="New" controller="Car" action="New" />
+      <mvcSiteMapNode id="Refuelling" title="Refuelling" controller="Refuelling" action="List" licensePlate="">
+        <mvcSiteMapNode id="NewRefuelling" title="New" controller="Refuelling" action="New" />
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode id="Account" title="Account" controller="Account" action="Index">
+      <mvcSiteMapNode id="Login" title="Login" controller="Account" action="Login" />
+      <mvcSiteMapNode id="Register" title="Account Creation" controller="Account" action="Register" />
+      <mvcSiteMapNode id="ChangePassword" title="Change Password" controller="Account" action="ChangePassword" />
+      <mvcSiteMapNode id="Logout" title="Logout" controller="Account" action="Logout" />
+    </mvcSiteMapNode>
+  </siteMapNode>
+</siteMap>
