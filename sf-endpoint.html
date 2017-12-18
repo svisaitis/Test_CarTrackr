@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title></title>
+	<style type="text/css">
+    .rating {
+        unicode-bidi:bidi-override;
+        direction:rtl;
+    }
+    .rating label {
+        display:inline-block;
+    }
+    .rating label input {
+        display:none;
+    }
+    .rating label span {
+        padding:0 5px;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:45px;
+        color:#ddd;
+    }
+
+    .rating label > input + span:hover,
+    .rating label > input + span:hover + label span,
+    .rating label > input:checked + span,
+    .rating label > input:checked + span + label span {
+        color:gold;
+        transition: color 0.5s;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    ::placeholder {
+        color: #706e6b;
+        font-weight: 400;
+        font-size: 13px;
+    }
+    .sr-comments-label {
+        display: block;
+        margin-top: 40px;
+    }
+    .slds-textarea {
+        margin: 5px 0 20px;
+        width: 80%;
+
+        background-color: white;
+        border: 1px solid #dddbda;
+        border-radius: 4px;
+        transition: border 0.1s linear, background-color 0.1s linear;
+        resize: vertical;
+        padding: 8px 12px;
+    }
+    .slds-textarea:focus, .slds-textarea:active {
+        outline: 0;
+        border-color: #1589ee;
+        background-color: white;
+        box-shadow: 0 0 3px #0070D2;
+    }
+
+    .sr-comments-label {
+        color: #3e3e3c;
+		font-family: Arial, sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 1.25; 
+    }
+    .slds-text-heading_large {
+        color: #3e3e3c;
+        font-family: Arial, sans-serif;
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .slds-button_brand {
+        width: 84%;
+
+        position: relative;
+        display: inline-block;
+        padding: 0;
+        background: transparent;
+        background-clip: border-box;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #0070d2;
+        -webkit-appearance: none;
+        white-space: normal;
+        user-select: none;
+        cursor: pointer;
+
+        padding-left: 16px;
+        padding-right: 16px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #dddbda;
+        transition: border 0.15s linear;
+        background-color: #0070d2;
+        border-color: #0070d2;
+        color: white;
+    }
+   .slds-button_brand:hover,.slds-button_brand:focus {
+        background-color: #005fb2;
+        border-color: #005fb2;
+        color: white;
+    }
+    .slds-button_brand:active {
+        background-color: #005fb2;
+        border-color: #005fb2;
+    }
+</style>
+</head>
+<body>
+	<div id="message"></div>
+	
+	<table border="0" cellspacing="0" cellpadding="0" width="500px">
+  <tbody>
+	<tr>
+	  <td>
+		<center>
+		  <h2 class="slds-text-heading_large">How would you rate your experience?</h2>
+		  <div class="interactive">
+			<form action="file:///C:/Documents%20and%20Settings/Ione/Desktop/sf-endpoint.html" method="GET"
+			  target="_blank">
+			  <div class="rating"></div>
+			  <label class="sr-comments-label" for="sr-comments">Let
+				us know more</label> <textarea class="slds-textarea" id="sr-comments" name="sr-comments" rows="6" cols="40" placeholder="Leave your comments here..."></textarea>
+			  <button class="slds-button_brand" type="submit">Send
+				us you review</button> </form>
+		  </div>
+		</center>
+	  </td>
+	</tr>
+  </tbody>
+</table>
+
+<script type="application/javascript">
+	var msg = document.querySelector('#message');
+	var table = document.querySelector('table');
+	var ratings = document.querySelector('.rating');
+	var urlParams = new URLSearchParams(window.location.search);
+	
+	if (!urlParams.get('owa')) {
+		table.style.display = 'none';
+		msg.innerHTML = `
+			<h2>Thank you for your review!</h2>
+			<h3>Your choices were:</h3>
+			<p><b>Rating:</b> ${urlParams.get('rating')} stars</p>
+			<p><b>Comments:</b> ${urlParams.get('sr-comments')}</p>
+		`
+	} else {
+		ratings.innerHTML = `
+			<label> <input name="rating" value="5" type="radio" ${urlParams.get('rating') == 5 ? 'checked' : ''}>
+			  <span>&#9733;</span> <label> <input name="rating"
+				  value="4" type="radio" ${urlParams.get('rating') == 4 ? 'checked' : ''}> <span>&#9733;</span> <label>
+				  <input name="rating" value="3" type="radio" ${urlParams.get('rating') == 3 ? 'checked' : ''}> <span>&#9733;</span>
+				  <label> <input name="rating" value="2"
+					  type="radio" ${urlParams.get('rating') == 2 ? 'checked' : ''}> <span>&#9733;</span> <label> <input
+						name="rating" value="1" type="radio" ${urlParams.get('rating') == 1 ? 'checked' : ''}> <span>&#9733;</span>
+					</label> </label> </label> </label> </label>
+		`
+	}
+</script>
+</body>
+</html>
